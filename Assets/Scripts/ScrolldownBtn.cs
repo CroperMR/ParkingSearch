@@ -1,0 +1,23 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ScrolldownBtn : MonoBehaviour {
+
+	private float speed = 5f;
+	private RectTransform rec;
+
+	void Start ()	{
+
+		rec = GetComponent <RectTransform> ();
+
+	}
+
+	void Update () {
+		if (rec.offsetMin.y != 0) {
+			rec.offsetMin += new Vector2 (rec.offsetMin.x, speed);
+			rec.offsetMax += new Vector2 (rec.offsetMax.x, speed);
+		}
+		
+	}
+}
